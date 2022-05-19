@@ -17,7 +17,7 @@ void setUI() {
              .setColorCaptionLabel(0)
              .setGroup(SIZE);
              
-  cp5.addSlider("addRay", 0, 500, addRay, 5, 45, sliderLength, 15)
+  cp5.addSlider("addRay", 100, 350, addRay, 5, 45, sliderLength, 15)
              .setColorCaptionLabel(0)
              .setGroup(SIZE);
           
@@ -77,7 +77,7 @@ void setUI() {
              .setHandleSize(10)
              .setColorCaptionLabel(0)
              .setColorTickMark(0)
-             .setRange(1,10)
+             .setRange(0,10)
              .setNumberOfTickMarks(10)
              .setRangeValues(nbWordsFilterMin, nbWordsFilterMax)
              // after the initialization we turn broadcast back on again

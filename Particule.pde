@@ -13,7 +13,8 @@ class Particule {
     
     this.id = id;
     this.type = type;
-    this.r = map(r, 15, 60, 0, 1);
+    print("   " + r);
+    this.r = map(r, 16, 59, 0, 1);
     this.r2 = r * sizeX;
     this.angle = angle - random(0, (2*PI) / 5);
     

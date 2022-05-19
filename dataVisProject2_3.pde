@@ -35,7 +35,7 @@ int wordsOpacity = 45;
 int wordsLengthFilterMin = 0;
 int wordsLengthFilterMax = 300;
 
-int nbWordsFilterMin = 1;
+int nbWordsFilterMin = 0;
 int nbWordsFilterMax= 10;
 
 int typeMin = 1;
@@ -117,6 +117,7 @@ void draw() {
   updateText();
    
   displayTypeLabel(710, 170);
+  displayCircle(170);
 }
 
 //init listParticules
@@ -128,13 +129,6 @@ void createListParticules() {
   for(int i = 0; i < dataSet.size(); i++) {
     
     JSONObject item = dataSet.getJSONObject(i);
-    
-    /*println("id : ", item.getString("id"));
-    println("category : ", item.getString("category")); 
-    println("text : ", item.getString("text"));
-    println("date : ", item.get("date"));
-    println("---------");
-    println(item.get("date").getClass());*/
     
     if(item.size() >= 6 && int(item.getString("category").substring(0, 1)) != 0) {
       
@@ -155,7 +149,6 @@ void createListParticules() {
       listParticules.add(p);
     }
   }
-  //print(listParticules.size());
 }
 
 float setAngle(String category) {
@@ -259,7 +252,7 @@ void controlEvent(ControlEvent theControlEvent) {
   
 }
 
-//additional 3d shape
+//additional 3d shape display
 
 void displayAxis(int len) {
   
@@ -340,6 +333,38 @@ void displayBox(int size, int opa) {
   translate(0,0,size/2);
   box(size);
   pop();
+}
+
+void displayCircle(int opa) {
+  
+  noFill();
+  strokeWeight(2);
+  stroke(0, opa);
+  
+  circle(0, 0, 2 * addRay);
+  circle(0, 0, 2 * (sizeX + addRay));
+  fill(0,opa);
+  circleText(addRay, "november 16th 2021",320 * .0005);
+  circleText(sizeX + addRay, "december 29th 2021",90 * .0005);
+}
+
+void circleText(float r, String text, float t) {
+  
+  textMode(SHAPE);
+  float x,y;
+  String [] textData = text.split("");
+  for(int i = 0; i< textData.length; i++){
+    
+        for(int j = 0; j<textData[i].length(); j++){
+          
+          char letter = textData[i].charAt(j); 
+          rotate(t);          
+          x = r*(cos(t));
+          y = r*(sin(t));
+          
+          text(letter, x + 3, y);
+        }    
+  }
 }
 
 //cptFunctions
