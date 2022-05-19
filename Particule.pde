@@ -67,4 +67,16 @@ class Particule {
     return false;
   }
   
+  void addVisibleWords() {
+    
+    for(int i = 0; i < this.words.length; i++) {
+      
+      boolean temp = false;
+      for(int j = 0; j < visibleWords.size(); j++) {
+        
+        if(this.words[i] == visibleWords.get(j)) temp = true;
+      }
+      if(!temp) visibleWords.add(words[i]);
+    }
+  }
 }
