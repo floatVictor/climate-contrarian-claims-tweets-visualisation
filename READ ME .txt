@@ -1,0 +1,47 @@
+DOCUMENTATION
+
+Execute the program, 2 options :
+
+- first exe in application.windows32/64 works
+- if not install processing, then peasyCam & controlP5 libs and it shoulds be fine
+Controls :
+ 
+mouse left-drag will rotate the camera around the subject, 
+a right drag will zoom in and out, and a middle-drag (command-left-drag on mac) will pan. 
+A double-click restores the camera to its original position. 
+The shift key constraints rotation and panning to one axis or the other.
+
+
+UI :
+
+// control sliders
+
+- Size : 
+
+	SIZEX : controls ray amplitude
+	SIZEY : controls height amplitude
+	ADDRAY : add a constant to the ray of each element
+
+- Noise : 
+
+	NOISERATIO : controls noise scale
+	NOISERATIO : controls how fast noise function evolve
+	NOISEAMP : controls noise amplitude
+
+- Display :
+
+	WORDSOPACITY : controls opacity of lines created with keywords shared by tweets
+	PARTICULESOPACITY : controls opacity of curves representing all the tweets
+
+- FILTER (range slider) : 
+	set a min & max value to target what information you want to be display
+
+	WORDSLENGTHFILTER : controls importance of keywords (how much time do they appear in the dataset)
+	NBWORDSFILTER : controls the number of keywords required in a tweet
+	TYPE : control the category required
+
+//text information
+
+- TWEETS COUNT : count of tweets visible (total and for each category)
+- KEYWORDS : count and list visible keywords
+
